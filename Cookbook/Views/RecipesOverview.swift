@@ -9,6 +9,7 @@
 import SwiftUI
 import ASCollectionView
 import CoreData
+import Firebase
 
 struct RecipesOverview: View {
     
@@ -66,6 +67,9 @@ struct RecipesOverview: View {
             do {
                 try managedObjectContext.save()
             } catch {
+                
+                Crashlytics.crashlytics().record(error: error)
+                
                 #if DEBUG
                 print("Deletation failed")
                 #endif
@@ -118,7 +122,9 @@ struct RecipesOverview: View {
                         .layout { self.layout }
                         .padding(.top)
                         .shadow(radius: 5)
-                        
+                    
+                } else {
+                    Rectangle().foregroundColor(.background).edgesIgnoringSafeArea(.all)
                 }
                 
                 NavigationLink(destination: NewRecipeContainerView(), isActive: self.$showNewRecipeView) {
@@ -132,7 +138,7 @@ struct RecipesOverview: View {
                 EditButton()
                     .hoverEffect()
                     .environment(\.editMode, self.$editMode)
-
+                
                 Button(action: {
                     self.addRecipe()
                 }) {
