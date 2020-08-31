@@ -7,7 +7,20 @@
 //
 
 import Foundation
+import CoreData
+import Firebase
 
 extension Recipe {
+    
     var duration: TimeInterval { worktime + resttime }
+    
+    var ingredients: [Ingredient] {
+        
+        let ingredientsForThisRecipe = IngredientsStore.shared.values.filter { ingredient in
+            let parentID = ingredient.parent?.id
+            return parentID != nil && parentID == id
+        }
+        
+        return ingredientsForThisRecipe
+    }
 }

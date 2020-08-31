@@ -20,9 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Set-up UI
         setNavBarAppearence()
-        UITableView.appearance().backgroundColor = UIColor.background
-        UICollectionView.appearance().backgroundColor = UIColor.background        
-        
         return true
     }
     

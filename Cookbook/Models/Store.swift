@@ -8,47 +8,64 @@
 
 import Foundation
 import CoreData
-import Firebase
+import FirebaseCrashlytics
 
-class Store {
+class PersistentContainer {
+    // Is in this container superclass because the generic class Store may not include static properties.
+    static let persistentContainer: NSPersistentContainer = {
+        
+        let container = NSPersistentContainer(name: "Model")
+        
+        container.loadPersistentStores { _, error in
+            if let error = error as NSError? {
+                Crashlytics.crashlytics().record(error: error)
+            }
+        }
+        
+        return container
+    }()
+}
 
 
-
-    private init() {
-        fetchRecipes()
+class Store<T: NSManagedObject>: PersistentContainer {
+    
+    
+    
+    init(entityName: String) {
+        super.init()
+        self.entityName = entityName
+        fetch()
     }
-
-
-
-    // MARK: - Properties
-    static let shared = Store()
-
-
-    var recipes = [Recipe]()
-
-
-
-    private var objectContext: NSManagedObjectContext {
+    
+    
+    
+    var objectContext: NSManagedObjectContext {
         persistentContainer.viewContext
     }
-
+    
     var persistentContainer: NSPersistentContainer = {
-      let container = NSPersistentContainer(name: "Model")
-      container.loadPersistentStores { _, error in
-        if let error = error as NSError? {
-          fatalError("Unresolved error \(error), \(error.userInfo)")
+        
+        let container = NSPersistentContainer(name: "Model")
+        
+        container.loadPersistentStores { _, error in
+            if let error = error as NSError? {
+                Crashlytics.crashlytics().record(error: error)
+            }
         }
-      }
-      return container
+        
+        return container
     }()
-
-
+    
+    var values = [T]()
+    
+    private var entityName = ""
+    
     // MARK: - Methods
-    private func fetchRecipes() {
-        let fetchRequest = NSFetchRequest<Recipe>(entityName: Store.Entity.recipe)
+    private func fetch() {
+        let fetchRequest = NSFetchRequest<T>(entityName: entityName)
 
         do {
-            recipes = try objectContext.fetch(fetchRequest)
+            values = try objectContext.fetch(fetchRequest)
         } catch let error as NSError {
 
             Crashlytics.crashlytics().record(error: error)
@@ -58,58 +75,31 @@ class Store {
             #endif
         }
     }
-
-    func addRecipe(_ recipe: Recipe) {
+    
+    func add(_ value: T) {
         storeChanges()
-        RecipesStoreUpdate.added(recipe).post()
     }
-
-    func updateRecipe(_ recipe: Recipe) {
+    
+    func update(_ value: T) {
         storeChanges()
-        RecipesStoreUpdate.changed(recipe).post()
     }
-
-    func deleteRecipe(_ recipe: Recipe) {
+    
+    func delete(_ value: T) {
+        objectContext.delete(value)
         storeChanges()
-        RecipesStoreUpdate.deleted(recipe).post()
     }
-
+    
     private func storeChanges() {
         do {
             try objectContext.save()
+            fetch()
         } catch let error as NSError {
-
+            
             Crashlytics.crashlytics().record(error: error)
-
+            
             #if DEBUG
             print("Could not store changes: \(error), \(error.userInfo)")
             #endif
-        }
-    }
-
-
-
-    // MARK: - Classes
-    private class Entity {
-        static let recipe = "Recipe"
-    }
-
-
-
-    // MARK: - Enums
-    enum RecipesStoreUpdate {
-        case added(_ recipe: Recipe)
-        case changed(_ recipe: Recipe)
-        case deleted(_ recipe: Recipe)
-
-        static let recipesStoreUpdateNotificationName = Notification.Name(rawValue: "recipesStoreUpdateNotification")
-
-        func post() {
-            switch self {
-            case .added(recipe: _): NotificationCenter.default.post(name: RecipesStoreUpdate.recipesStoreUpdateNotificationName, object: self)
-            case .changed(recipe: _): NotificationCenter.default.post(name: RecipesStoreUpdate.recipesStoreUpdateNotificationName, object: self)
-            case .deleted(recipe: _): NotificationCenter.default.post(name: RecipesStoreUpdate.recipesStoreUpdateNotificationName, object: self)
-            }
         }
     }
 }

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="IngredientsViewCell" customModule="Cookbook" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ahy-tG-hJF">
+                        <rect key="frame" x="16" y="8" width="78.5" height="28"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad"/>
+                    </textField>
+                    <textField hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingredient" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQn-Qr-eRP">
+                        <rect key="frame" x="110.5" y="8" width="193.5" height="28"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 0.5 kg beans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZf-Ry-k10">
+                        <rect key="frame" x="16" y="8" width="288" height="28"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ahy-tG-hJF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="I1e-bT-tmK"/>
+                    <constraint firstItem="EQn-Qr-eRP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="IXO-Oi-9O6"/>
+                    <constraint firstAttribute="bottom" secondItem="EQn-Qr-eRP" secondAttribute="bottom" constant="8" id="MRX-fN-0Zm"/>
+                    <constraint firstItem="EQn-Qr-eRP" firstAttribute="leading" secondItem="ahy-tG-hJF" secondAttribute="trailing" constant="16" id="PFD-En-bIe"/>
+                    <constraint firstAttribute="bottom" secondItem="ahy-tG-hJF" secondAttribute="bottom" constant="8" id="Pd0-TU-6wR"/>
+                    <constraint firstItem="SZf-Ry-k10" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="SV0-pS-4RS"/>
+                    <constraint firstAttribute="bottom" secondItem="SZf-Ry-k10" secondAttribute="bottom" constant="8" id="Y0e-fR-8Lt"/>
+                    <constraint firstAttribute="trailing" secondItem="SZf-Ry-k10" secondAttribute="trailing" constant="16" id="bGL-Wj-nKd"/>
+                    <constraint firstItem="ahy-tG-hJF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="lye-5n-xdv"/>
+                    <constraint firstItem="SZf-Ry-k10" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="m7Z-kk-auC"/>
+                    <constraint firstAttribute="trailing" secondItem="EQn-Qr-eRP" secondAttribute="trailing" constant="16" id="yAy-3C-Cm8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="amountField" destination="ahy-tG-hJF" id="j0t-mh-ife"/>
+                <outlet property="ingredientDescriptionField" destination="EQn-Qr-eRP" id="U0n-BX-BTj"/>
+                <outlet property="ingredientLabel" destination="SZf-Ry-k10" id="eKk-Hf-lW7"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
+        </tableViewCell>
+    </objects>
+</document>
