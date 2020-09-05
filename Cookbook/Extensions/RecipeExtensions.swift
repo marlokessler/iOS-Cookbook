@@ -14,13 +14,13 @@ extension Recipe {
     
     var duration: TimeInterval { worktime + resttime }
     
-    var ingredients: [Ingredient] {
-        
-        let ingredientsForThisRecipe = IngredientsStore.shared.values.filter { ingredient in
-            let parentID = ingredient.parent?.id
-            return parentID != nil && parentID == id
-        }
-        
-        return ingredientsForThisRecipe
+    var ingredients: [[String : Any]] {
+        guard let ingredients = ingredientsData as? [[String : Any]] else { return [[String : Any]]() }
+        return ingredients
+    }
+    
+    class IngredientKeys {
+        static let amount = "amount"
+        static let description = "ingredientDescription"
     }
 }

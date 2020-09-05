@@ -11,6 +11,7 @@ import SwiftUI
 extension Color {
     static var primaryAccent: Color { Color("PrimaryAccent") }
     static var background: Color { Color("Background") }
+    static var background2: Color { Color("Background 2") }
     static var backgroundAccent: Color { Color("BackgroundAccent") }
     static var introScreenPrimary: Color { Color("IntroScreenPrimary") }
 }
@@ -18,6 +19,7 @@ extension Color {
 extension UIColor {
     static var primaryAccent: UIColor { UIColor(named: "PrimaryAccent") ?? .purple }
     static var background: UIColor { UIColor(named: "Background") ?? .systemPurple}
+    static var background2: UIColor { UIColor(named: "Background 2") ?? .systemPurple}
     static var backgroundAccent: UIColor { UIColor(named: "BackgroundAccent") ?? .systemPurple}
     static var introScreenPrimary: UIColor { UIColor(named: "IntroScreenPrimary") ?? .white }
 }

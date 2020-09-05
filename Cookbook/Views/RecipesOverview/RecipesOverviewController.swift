@@ -15,7 +15,11 @@ class RecipesOverviewController: UIViewController {
     
     private let reuseIdentifier = "Cell"
     
-    private var isInEditMode = false
+    private var isInEditMode = false {
+        didSet {
+            updateAppearance()
+        }
+    }
     
     
     
@@ -27,10 +31,20 @@ class RecipesOverviewController: UIViewController {
         
         sortRecipes()
         configureCollectionView()
-        configureSearchBar()
-        updateNavBar()
+//        configureSearchBar()
+        updateAppearance()
     }
     
+    
+    private func updateAppearance() {
+        
+        updateNavBar()
+        
+        collectionView.visibleCells.forEach { cell in
+            guard let cell = cell as? RecipeCollectionViewCell else { return }
+            cell.isInEditMode = isInEditMode
+        }
+    }
     
     
     //  MARK: CollectionView
@@ -40,7 +54,6 @@ class RecipesOverviewController: UIViewController {
     private let itemsSpacing = ItemsSpacing(horizontal: 16, vertical: 16)
     
     private func configureCollectionView() {
-        
         collectionView.register(UINib(nibName: "RecipeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -62,7 +75,6 @@ extension RecipesOverviewController {
         #if DEBUG
         print("Received a \"recipes changed\" notification.")
         #endif
-        
         guard let change = notification.object as? RecipesStore.Update else { return }
         
         setRecipesFromStore()
@@ -79,7 +91,6 @@ extension RecipesOverviewController {
         }
     }
     
-    
     private func setRecipesFromStore() {
         #if DEBUG
         print("Set recipes from store")
@@ -87,7 +98,6 @@ extension RecipesOverviewController {
         recipes = RecipesStore.shared.values
         sortRecipes()
     }
-    
     
     private func sortRecipes() {
         #if DEBUG
@@ -105,7 +115,6 @@ extension RecipesOverviewController {
 
 // MARK: - NavigationBarItems
 extension RecipesOverviewController {
-    
     func updateNavBar() {
         guard let navItem = navigationController?.navigationBar.topItem else { return }
         
@@ -119,29 +128,33 @@ extension RecipesOverviewController {
             rightBarButtonItems.append(editButton)
         }
         
-        navItem.rightBarButtonItems = rightBarButtonItems
-        
+        navItem.setRightBarButtonItems(rightBarButtonItems, animated: true)
     }
     
     @objc func editButtonPressed(sender: UIBarButtonItem) {
         #if DEBUG
         print("Edit button pressed")
         #endif
-        
         isInEditMode.toggle()
-        
-        sender.title = isInEditMode ? "Done" : "Edit"
-        
-        collectionView.visibleCells.forEach { cell in
-            guard let cell = cell as? RecipeCollectionViewCell else { return }
-            cell.isInEditMode = isInEditMode
-        }
     }
     
     @objc func addButtonPressed(sender: UIBarButtonItem) {
         #if DEBUG
         print("Add button pressed")
         #endif
+        isInEditMode = false
+        showNewRecipeVC()
+    }
+    
+    private func showNewRecipeVC() {
+        guard let newRecipeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewRecipeVC") as? NewRecipeViewController else { return }
+        newRecipeVC.delegate = self
+        
+        let navigationController = UINavigationController(rootViewController: newRecipeVC)
+        navigationController.modalPresentationStyle = .overCurrentContext
+        navigationController.modalTransitionStyle   = .crossDissolve
+        
+        self.present(navigationController, animated: true, completion: nil)
     }
 }
 
@@ -197,18 +210,17 @@ extension RecipesOverviewController: UICollectionViewDelegate {
         print("Did select recipe \(recipes[indexPath.row].title ?? "\(indexPath.row)")")
         #endif
         let selectedRecipe = recipes[indexPath.row]
-        pushViewController(for: selectedRecipe)
+                
+        guard let recipeVC = getVC(for: selectedRecipe) else { return }
+        navigationController?.pushViewController(recipeVC, animated: true)
     }
     
-    private func pushViewController(for recipe: Recipe) {
-        guard
-            let navigationController = navigationController,
-            let recipeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RecipeViewController") as? RecipeViewController
-            else { return }
+    private func getVC(for recipe: Recipe) -> RecipeViewController? {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let recipeVC = storyboard.instantiateViewController(withIdentifier: "RecipeViewController") as? RecipeViewController else { return nil }
         
         recipeVC.recipe = recipe
-        
-        navigationController.pushViewController(recipeVC, animated: true)
+        return recipeVC
     }
 }
 
@@ -294,7 +306,6 @@ extension RecipesOverviewController: RecipeCollectionViewCellDelegate {
         let alert = UIAlertController(title: "Do you really want to delete \"\(recipe.title ?? "")\"?", message: nil, preferredStyle: .alert)
         
         let deleteAction = UIAlertAction(title: "Delete Recipe", style: .destructive) { _ in
-            
             self.collectionView.performBatchUpdates({
                 RecipesStore.shared.delete(recipe)
                 self.collectionView.deleteItems(at: [indexPath])
@@ -312,4 +323,22 @@ extension RecipesOverviewController: RecipeCollectionViewCellDelegate {
         present(alert, animated: true, completion: nil)
     }
     
+}
+
+
+
+// MARK: - NewRecipeDelegate
+extension RecipesOverviewController: NewRecipeDelegate {
+    func createRecipe(with title: String) {
+        let recipesStore = RecipesStore.shared
+        
+        let recipe = Recipe(context: recipesStore.objectContext)
+        recipe.title = title
+        
+        recipesStore.add(recipe)
+        
+        guard let recipeVC = getVC(for: recipe) else { return }
+        recipeVC.shouldAppearInEditMode = true
+        navigationController?.pushViewController(recipeVC, animated: true)
+    }
 }

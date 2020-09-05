@@ -43,7 +43,7 @@ extension CircularButton {
     
     func setBackground(color: UIColor) {
         let backgroundImageView       = UIImageView(image: UIImage(systemName: "circle.fill"))
-        backgroundImageView.tintColor = .white
+        backgroundImageView.tintColor = color
         backgroundImageView.frame     = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
         
         addSubview(backgroundImageView)

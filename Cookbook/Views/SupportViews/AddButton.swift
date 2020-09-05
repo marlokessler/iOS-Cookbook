@@ -23,13 +23,13 @@ class AddButton: CircularButton {
     
     
     private func setUp() {
-        setBackground(color: .backgroundAccent)
+        setBackground(color: .white)
         setForeground()
     }
     
     private func setForeground() {
-        let foregroundImageView       = UIImageView(image: UIImage(systemName: "plus"))
-        foregroundImageView.tintColor = .white
+        let foregroundImageView       = UIImageView(image: UIImage(systemName: "plus.circle.fill"))
+        foregroundImageView.tintColor = .backgroundAccent
         
         setForeground(view: foregroundImageView)
     }
