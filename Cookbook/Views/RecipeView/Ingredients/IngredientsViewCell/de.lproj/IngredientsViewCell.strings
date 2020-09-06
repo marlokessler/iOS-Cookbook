@@ -1,0 +1,9 @@
+
+/* Class = "UITextField"; placeholder = "Ingredient"; ObjectID = "EQn-Qr-eRP"; */
+"EQn-Qr-eRP.placeholder" = "Zutat";
+
+/* Class = "UILabel"; text = "- 1.0 kg of magic pouder"; ObjectID = "SZf-Ry-k10"; */
+"SZf-Ry-k10.text" = "- 1.0 kg of magic pouder";
+
+/* Class = "UITextField"; placeholder = "Amount"; ObjectID = "ahy-tG-hJF"; */
+"ahy-tG-hJF.placeholder" = "Menge";

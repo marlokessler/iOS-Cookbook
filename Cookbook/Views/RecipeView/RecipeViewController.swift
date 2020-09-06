@@ -107,6 +107,15 @@ class RecipeViewController: UIViewController {
         
         RecipesStore.shared.update(recipe)
     }
+    
+    private var hasUnsavedChanges: Bool {
+        return imageVC.hasUnsavedChanges       ||
+               titleVC.hasUnsavedChanges       ||
+               portionsVC.hasUnsavedChanges    ||
+               durationVC.hasUnsavedChanges    ||
+               ingredientsVC.hasUnsavedChanges ||
+               instructionsVC.hasUnsavedChanges
+    }
 }
 
 
@@ -144,7 +153,22 @@ extension RecipeViewController {
     }
     
     @objc private func cancelButtonPressed() {
-        self.isInEditMode = false
+        if self.hasUnsavedChanges {
+            showCancelAlert()
+        } else {
+            self.isInEditMode = false
+        }
+    }
+    
+    private func showCancelAlert() {
+        let style   = UIDevice().userInterfaceIdiom == .phone ? UIAlertController.Style.actionSheet : .alert
+        let alert   = UIAlertController(title: "", message: "Are you sure you want to discard your changes?".localized(), preferredStyle: style)
+        let discard = UIAlertAction(title: "Discard Changes".localized(), style: .destructive) { _ in self.isInEditMode = false }
+        let cancel  = UIAlertAction(title: "Keep Editing".localized(), style: .cancel, handler: nil)
+        alert.addAction(discard)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true, completion: nil)
     }
 }
 

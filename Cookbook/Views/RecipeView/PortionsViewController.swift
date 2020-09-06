@@ -42,7 +42,7 @@ class PortionsViewController: RecipeViewContainerController {
         let portions = recipe.portions
         
         amountField.text = "\(portions)"
-        label.text       = isInEditMode ? "Portions:" : "For \(portions) Portions"
+        label.text       = isInEditMode ? "Portions:".localized() : String(format: "For %d Portions".localized(), portions)
     }
 }
 

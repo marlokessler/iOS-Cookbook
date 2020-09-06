@@ -1,0 +1,41 @@
+/* Class = "UITextField"; placeholder = "Titel"; ObjectID = "4GF-xb-wZN"; */
+"4GF-xb-wZN.placeholder" = "Titel";
+
+/* Class = "UILabel"; text = "Min"; ObjectID = "4lU-P2-OgS"; */
+"4lU-P2-OgS.text" = "Min";
+
+/* Class = "UINavigationItem"; title = "Meine Rezepte"; ObjectID = "5wZ-gs-hKv"; */
+"5wZ-gs-hKv.title" = "Meine Rezepte";
+
+/* Class = "UILabel"; text = "Zutaten"; ObjectID = "7d2-ib-hSL"; */
+"7d2-ib-hSL.text" = "Zutaten";
+
+/* Class = "UINavigationItem"; title = "Neues Rezept"; ObjectID = "Fei-OI-OcW"; */
+"Fei-OI-OcW.title" = "Neues Rezept";
+
+/* Class = "UILabel"; text = "Ruhezeit:"; ObjectID = "GZ1-Xv-6Gp"; */
+"GZ1-Xv-6Gp.text" = "Ruhezeit:";
+
+/* Class = "UILabel"; text = "Portionen:"; ObjectID = "JOQ-at-32w"; */
+"JOQ-at-32w.text" = "Portionen:";
+
+/* Class = "UIButton"; normalTitle = "Bild bearbeiten"; ObjectID = "LyU-wJ-Bgm"; */
+"LyU-wJ-Bgm.normalTitle" = "Bild bearbeiten";
+
+/* Class = "UILabel"; text = "Keine Zutaten"; ObjectID = "PSZ-W0-HMa"; */
+"PSZ-W0-HMa.text" = "Keine Zutaten";
+
+/* Class = "UILabel"; text = "Kochzeit:"; ObjectID = "QX2-7l-cot"; */
+"QX2-7l-cot.text" = "Kochzeit:";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "aCD-me-gLe"; */
+"aCD-me-gLe.placeholder" = "Name";
+
+/* Class = "UILabel"; text = "Min"; ObjectID = "awl-We-2VJ"; */
+"awl-We-2VJ.text" = "Min";
+
+/* Class = "UILabel"; text = "Keine Beschreibung"; ObjectID = "f7N-sF-4gh"; */
+"f7N-sF-4gh.text" = "Keine Beschreibung";
+
+/* Class = "UILabel"; text = "Beschreibung"; ObjectID = "uKE-NP-VSP"; */
+"uKE-NP-VSP.text" = "Beschreibung";

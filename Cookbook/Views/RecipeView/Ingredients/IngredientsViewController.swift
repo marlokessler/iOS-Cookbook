@@ -26,8 +26,6 @@ class IngredientsViewController: RecipeViewContainerController {
     
     var recipe: Recipe! {
         didSet {
-//            recipe.ingredientsData = [[Recipe.IngredientKeys.amount: 2.0, Recipe.IngredientKeys.description: "kg of famine"]] as NSObject
-//            RecipesStore.shared.update(recipe)
             setData()
             updateAppearance()
         }

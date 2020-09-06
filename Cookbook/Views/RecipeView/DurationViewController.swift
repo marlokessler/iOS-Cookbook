@@ -57,11 +57,11 @@ class DurationViewController: RecipeViewContainerController {
     private func setDurationData() {
         let worktimeString = formattedString(for: recipe.worktime)
         worktimeField.text = worktimeString
-        worktimeLabel.text = "Work time: \(worktimeString) min"
+        worktimeLabel.text = String(format: "Work time: %@ min".localized(), worktimeString)
         
         let resttimeString = formattedString(for: recipe.resttime)
         resttimeField.text = resttimeString
-        resttimeLabel.text = "Rest time: \(resttimeString) min"
+        resttimeLabel.text = String(format: "Rest time: %@ min".localized(), resttimeString)
     }
     
     private func formattedString(for number: Double) -> String {

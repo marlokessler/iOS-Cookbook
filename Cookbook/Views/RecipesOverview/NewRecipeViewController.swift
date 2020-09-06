@@ -45,9 +45,9 @@ class NewRecipeViewController: UIViewController {
         preView.layer.shadowColor  = UIColor.primaryAccent.cgColor
         preView.layer.shadowRadius = 5
         
-        previewNameLabel.text = "New Recipe"
+        previewNameLabel.text = "New Recipe".localized()
         
-        titleField.text       = "New Recipe"
+        titleField.text       = "New Recipe".localized()
         titleField.delegate   = self
         titleField.addTarget(self, action: #selector(self.nameFieldTextChanged(_:)), for: .editingChanged)
         

@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+@available(iOS 13.0, *)
 extension Color {
     static var primaryAccent: Color { Color("PrimaryAccent") }
     static var background: Color { Color("Background") }

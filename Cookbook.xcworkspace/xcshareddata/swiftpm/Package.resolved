@@ -2,30 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "ASCollectionView",
-        "repositoryURL": "https://github.com/apptekstudios/ASCollectionView.git",
+        "package": "SwiftExtensions",
+        "repositoryURL": "https://github.com/Connapptivity/SwiftExtensions.git",
         "state": {
           "branch": null,
-          "revision": "4550cd5b5cfc3f437f8ff838939c6be21edfe992",
-          "version": "1.7.1"
-        }
-      },
-      {
-        "package": "DifferenceKit",
-        "repositoryURL": "https://github.com/ra1028/DifferenceKit",
-        "state": {
-          "branch": null,
-          "revision": "14c66681e12a38b81045f44c6c29724a0d4b0e72",
-          "version": "1.1.5"
-        }
-      },
-      {
-        "package": "SwiftUIViews",
-        "repositoryURL": "https://github.com/Connapptivity/iOS-SwiftUIViews.git",
-        "state": {
-          "branch": null,
-          "revision": "d6050afb0931e1b8737548083fc1ddce676f89c0",
-          "version": "1.0.0"
+          "revision": "ecf4914aba3b7ca5a899b0cfee28a0f9fdf01201",
+          "version": "1.0.2"
         }
       },
       {

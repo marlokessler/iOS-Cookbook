@@ -8,12 +8,13 @@
 
 import UIKit
 import CoreData
+import SwiftExtensions
 
 class RecipesOverviewController: UIViewController {
     
     var recipes = RecipesStore.shared.values
     
-    private let reuseIdentifier = "Cell"
+    private let reuseIdentifier = "RecipeCollectionViewCell"
     
     private var isInEditMode = false {
         didSet {
@@ -54,7 +55,7 @@ class RecipesOverviewController: UIViewController {
     private let itemsSpacing = ItemsSpacing(horizontal: 16, vertical: 16)
     
     private func configureCollectionView() {
-        collectionView.register(UINib(nibName: "RecipeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -124,7 +125,7 @@ extension RecipesOverviewController {
         rightBarButtonItems.append(addButton)
         
         if recipes.count > 0 {
-            let editButton = UIBarButtonItem(title: isInEditMode ? "Done" : "Edit", style: .plain, target: self, action: #selector(self.editButtonPressed(sender:)))
+            let editButton = UIBarButtonItem(barButtonSystemItem: isInEditMode ? .done : .edit, target: self, action: #selector(self.editButtonPressed(sender:)))
             rightBarButtonItems.append(editButton)
         }
         
@@ -303,26 +304,30 @@ extension RecipesOverviewController: UICollectionViewDelegateFlowLayout {
 extension RecipesOverviewController: RecipeCollectionViewCellDelegate {
     
     func didPressDeleteButton(for recipe: Recipe, at indexPath: IndexPath) {
-        let alert = UIAlertController(title: "Do you really want to delete \"\(recipe.title ?? "")\"?", message: nil, preferredStyle: .alert)
+        let message = String(format: "Do you really want to delete \"%@\"?".localized(), recipe.title ?? "")
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         
-        let deleteAction = UIAlertAction(title: "Delete Recipe", style: .destructive) { _ in
-            self.collectionView.performBatchUpdates({
-                RecipesStore.shared.delete(recipe)
-                self.collectionView.deleteItems(at: [indexPath])
-            }, completion: { _ in
-                // Necerssary, because otherwise errors occures due to unknown reasons.
-                // TODO: Find the reasons, why those errors occure.
-                self.collectionView.reloadData()
-            })
+        let deleteAction = UIAlertAction(title: "Delete Recipe".localized(), style: .destructive) { _ in
+            self.delete(recipe, at: indexPath)
         }
         alert.addAction(deleteAction)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         
         present(alert, animated: true, completion: nil)
     }
     
+    private func delete(_ recipe: Recipe, at indexPath: IndexPath) {
+        self.collectionView.performBatchUpdates({
+            RecipesStore.shared.delete(recipe)
+            self.collectionView.deleteItems(at: [indexPath])
+        }, completion: { _ in
+            // Necerssary, because otherwise errors occures due to unknown reasons.
+            // TODO: Find the reasons, why those errors occure.
+            self.collectionView.reloadData()
+        })
+    }
 }
 
 

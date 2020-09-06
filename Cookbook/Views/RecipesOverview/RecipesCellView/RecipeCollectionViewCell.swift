@@ -39,7 +39,7 @@ class RecipeCollectionViewCell: UICollectionViewCell {
             }
             
             titleLabel.text    = recipe.title ?? ""
-            durationLabel.text = "\(Int(exactly: recipe.duration) ?? 0) min"
+            durationLabel.text = String(format: "%d min".localized(), Int(exactly: recipe.duration) ?? 0)
         }
     }
     

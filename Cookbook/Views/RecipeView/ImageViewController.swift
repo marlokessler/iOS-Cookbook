@@ -75,7 +75,7 @@ class ImageViewController: RecipeViewContainerController {
         
         let noImageAvailable = imageView.image == nil
         
-        let buttonTitle = noImageAvailable ? "Add Image" : "Edit Image"
+        let buttonTitle = noImageAvailable ? "Add Image".localized() : "Edit Image".localized()
         button.setTitle(buttonTitle, for: .normal)
         
         buttonContainer.layer.borderWidth        = isInEditMode && noImageAvailable ? 2 : 0

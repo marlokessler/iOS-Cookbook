@@ -27,17 +27,17 @@ class Introscreen {
     private static var intro: WhatsNew = {
         WhatsNew(
             // The Title
-            title: "Welcome to Cookbook",
+            title: "Welcome to Cookbook".localized(),
             // The features you want to showcase
             items: [
                 WhatsNew.Item(
-                    title: "Store your favorite recipes",
-                    subtitle: "You can easily store all your favorite recipes in Cookbook 🥘🥗🧁",
+                    title: "Store your favorite recipes".localized(),
+                    subtitle: "You can easily store all your favorite recipes in Cookbook 🥘🥗🧁".localized(),
                     image: nil
                 ),
                 WhatsNew.Item(
-                    title: "Access your recipes",
-                    subtitle: "You can easily access your recipes when you need them and cook some magic 👩🏼‍🍳👨🏿‍🍳",
+                    title: "Access your recipes".localized(),
+                    subtitle: "You can easily access your recipes when you need them and cook some magic 👩🏼‍🍳👨🏿‍🍳".localized(),
                     image: nil
                 )
             ]
@@ -56,12 +56,12 @@ class Introscreen {
         configuration.completionButton.backgroundColor = UIColor(named: "IntroScreenInverted") ?? .purple
         configuration.completionButton.titleColor = .white
         configuration.completionButton.hapticFeedback = .impact(.medium)
-        configuration.completionButton.title = "Let's start!"
+        configuration.completionButton.title = "Let's start!".localized()
         
         configuration.itemsView.layout = .left
         
         configuration.apply(animation: .slideUp)
-        
+                
         return configuration
     }()
 }

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringKey</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string></string>
+			<key>zero</key>
+			<string></string>
+			<key>one</key>
+			<string></string>
+			<key>two</key>
+			<string></string>
+			<key>few</key>
+			<string></string>
+			<key>many</key>
+			<string></string>
+			<key>other</key>
+			<string></string>
+		</dict>
+	</dict>
+	<key>Do you really want to delete &quot;%@&quot;?</key>
+	<string>Do you really want to delete &quot;%@&quot;?</string>
+	<key>Delete Recipe</key>
+	<string>Delete Recipe</string>
+	<key>Cancel</key>
+	<string>Cancel</string>
+	<key>%d min</key>
+	<string>%d min</string>
+	<key>New Recipe</key>
+	<string>New Recipe</string>
+	<key>Are you sure you want to discard your changes?</key>
+	<string>Are you sure you want to discard your changes?</string>
+	<key>Discard Changes</key>
+	<string>Discard Changes</string>
+	<key>Keep Editing</key>
+	<string>Keep Editing</string>
+	<key>Add Image</key>
+	<string>Add Image</string>
+	<key>Edit Image</key>
+	<string>Edit Image</string>
+	<key>Portions:</key>
+	<string>Portions:</string>
+	<key>For %d Portions</key>
+	<string>For %d Portions</string>
+	<key>Work time: %@ min</key>
+	<string>Work time: %@ min</string>
+	<key>Rest time: %@ min</key>
+	<string>Rest time: %@ min</string>
+	<key>Welcome to Cookbook</key>
+	<string>Welcome to Cookbook</string>
+	<key>Store your favorite recipes</key>
+	<string>Store your favorite recipes</string>
+	<key>You can easily store all your favorite recipes in Cookbook 🥘🥗🧁</key>
+	<string>You can easily store all your favorite recipes in Cookbook 🥘🥗🧁</string>
+	<key>Access your recipes</key>
+	<string>Access your recipes</string>
+	<key>You can easily access your recipes when you need them and cook some magic 👩🏼‍🍳👨🏿‍🍳</key>
+	<string>You can easily access your recipes when you need them and cook some magic 👩🏼‍🍳👨🏿‍🍳</string>
+	<key>Let&apos;s start!</key>
+	<string>Let&apos;s start!</string>
+</dict>
+</plist>
