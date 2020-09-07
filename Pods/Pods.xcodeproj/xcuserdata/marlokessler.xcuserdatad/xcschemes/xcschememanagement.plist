@@ -11,6 +11,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Firebase.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>21</integer>
+		</dict>
 		<key>FirebaseABTesting.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -64,6 +69,11 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>7</integer>
+		</dict>
+		<key>FirebasePerformance.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>20</integer>
 		</dict>
 		<key>FirebaseRemoteConfig.xcscheme</key>
 		<dict>
@@ -138,6 +148,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>072CEA044D2EF26F03496D5996BBF59F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>41AB140807C3F67E2661E5DC2A6B53CE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>526C4398D095B3704EB933DADBC30093</key>
 		<dict>
 			<key>primary</key>

@@ -19,6 +19,7 @@
 		436CDEBA25054858007007B2 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 436CDEBC25054858007007B2 /* Localizable.stringsdict */; };
 		436CDEBE25054CBE007007B2 /* IngredientsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436CDEC025054CBE007007B2 /* IngredientsViewCell.xib */; };
 		436CDEC525054CF4007007B2 /* InstructionsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436CDEC725054CF4007007B2 /* InstructionsViewCell.xib */; };
+		436CDECF250559D3007007B2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 436CDECE250559D3007007B2 /* Settings.bundle */; };
 		43731BF824FB98B10025B5C9 /* IngredientsViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43731BF724FB98B10025B5C9 /* IngredientsViewCellDelegate.swift */; };
 		43731BFE24FBBB9F0025B5C9 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43731BFD24FBBB9F0025B5C9 /* CircularButton.swift */; };
 		43731C0024FBBF0D0025B5C9 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43731BFF24FBBF0D0025B5C9 /* AddButton.swift */; };
@@ -61,6 +62,7 @@
 		43BCD34724F267830041447D /* NewRecipeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BCD34624F267830041447D /* NewRecipeContainerView.swift */; };
 		43BCD36D24F27AD00041447D /* RecipesOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BCD36C24F27AD00041447D /* RecipesOverviewController.swift */; };
 		43BCD37124F2FC700041447D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BCD37024F2FC700041447D /* Store.swift */; };
+		43F85C8F2506C8CD00A5004C /* SettingsConntector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F85C8E2506C8CD00A5004C /* SettingsConntector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,7 @@
 		436CDEC625054CF4007007B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InstructionsViewCell.xib; sourceTree = "<group>"; };
 		436CDECC25055399007007B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		436CDECD250553A1007007B2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		436CDECE250559D3007007B2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		43731BF724FB98B10025B5C9 /* IngredientsViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewCellDelegate.swift; sourceTree = "<group>"; };
 		43731BFD24FBBB9F0025B5C9 /* CircularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
 		43731BFF24FBBF0D0025B5C9 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
@@ -123,6 +126,7 @@
 		43BCD34624F267830041447D /* NewRecipeContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecipeContainerView.swift; sourceTree = "<group>"; };
 		43BCD36C24F27AD00041447D /* RecipesOverviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesOverviewController.swift; sourceTree = "<group>"; };
 		43BCD37024F2FC700041447D /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		43F85C8E2506C8CD00A5004C /* SettingsConntector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConntector.swift; sourceTree = "<group>"; };
 		4FC1528750CB84A9529F463B /* Pods_Cookbook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cookbook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E8E784E4C6919F9D5B86AB /* Pods-Cookbook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cookbook.debug.xcconfig"; path = "Target Support Files/Pods-Cookbook/Pods-Cookbook.debug.xcconfig"; sourceTree = "<group>"; };
 		A8FE6CCB8C893EF91A3052E6 /* Pods-Cookbook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cookbook.release.xcconfig"; path = "Target Support Files/Pods-Cookbook/Pods-Cookbook.release.xcconfig"; sourceTree = "<group>"; };
@@ -277,6 +281,8 @@
 				43BCD31024F196260041447D /* LaunchScreen.storyboard */,
 				43BCD31324F196260041447D /* Info.plist */,
 				43BCD32D24F196C10041447D /* Assets.xcassets */,
+				43F85C8E2506C8CD00A5004C /* SettingsConntector.swift */,
+				436CDECE250559D3007007B2 /* Settings.bundle */,
 				436CDEBC25054858007007B2 /* Localizable.stringsdict */,
 				4323FAF924F677160098DE4B /* GoogleService-Info.plist */,
 				43BCD33224F197640041447D /* SwiftUI */,
@@ -429,6 +435,7 @@
 			files = (
 				43BCD31224F196260041447D /* LaunchScreen.storyboard in Resources */,
 				4396DB0D24F3DE7400CB3CE5 /* RecipeCollectionViewCell.xib in Resources */,
+				436CDECF250559D3007007B2 /* Settings.bundle in Resources */,
 				436CDEAE2505399B007007B2 /* Main.storyboard in Resources */,
 				43BCD30F24F196260041447D /* Preview Assets.xcassets in Resources */,
 				43BCD32F24F196C10041447D /* Assets.xcassets in Resources */,
@@ -516,6 +523,7 @@
 				43BCD32624F196A10041447D /* SceneDelegate.swift in Sources */,
 				4398C02724FA8D6E00F81537 /* RecipesStore.swift in Sources */,
 				43731C1424FC15060025B5C9 /* RecipeViewContainerProtocol.swift in Sources */,
+				43F85C8F2506C8CD00A5004C /* SettingsConntector.swift in Sources */,
 				4396DB0224F3CE2900CB3CE5 /* RecipeViewController.swift in Sources */,
 				43731C1024FC0F4D0025B5C9 /* ImageViewController.swift in Sources */,
 				43731C0024FBBF0D0025B5C9 /* AddButton.swift in Sources */,
