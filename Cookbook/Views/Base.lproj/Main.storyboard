@@ -215,7 +215,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hrp-qj-Nnh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Recipes" id="5wZ-gs-hKv"/>
+                    <navigationItem key="navigationItem" title="My Recipes" largeTitleDisplayMode="always" id="5wZ-gs-hKv"/>
                     <connections>
                         <outlet property="collectionView" destination="RAv-8a-thM" id="YdQ-EA-ZVm"/>
                     </connections>

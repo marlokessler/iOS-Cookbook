@@ -25,8 +25,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-//        addTestRecipes(5)
-        
 //        let recipesOverview = RecipesOverview()
 //
 //        if let windowScene = scene as? UIWindowScene {
@@ -40,54 +38,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        }
     }
     
-    private func addTestRecipes(_ number: Int) {
-        let context = RecipesStore.shared.persistentContainer.viewContext
-        
-        for i in 1...number {
-            let rec = Recipe(context: context)
-
-            rec.id = UUID().uuidString
-            rec.creationDate = Date()
-            
-            if i == 1 || i == 4 {
-                rec.image = UIImage(named: "Cake1")?.jpegData(compressionQuality: 1)
-            } else if i == 2 || i == 5 {
-                rec.image = UIImage(named: "Cake2")?.jpegData(compressionQuality: 1)
-            }
-
-            rec.title = "Strawberry Cake"//"Chocolate Cake"
-            rec.portions = 5
-
-            rec.worktime = 45
-            rec.resttime = 15
-
-//            rec.ingredients =
-//            """
-//            - Chocolate
-//            - Famine
-//            - Egss
-//            - Milk
-//            - Sugar
-//            """
-//            rec.instructions =
-//            """
-//            1. Put together
-//            2. Bake
-//            3. Eat and enjoy!
-//            """
-
-            try! context.save()
-        }
-    }
-    
-    
     
     // MARK: - Change status bar style
-    class ContentHostingController<T: View>: UIHostingController<T> {
-        override var preferredStatusBarStyle: UIStatusBarStyle {
-            .lightContent
-        }
-    }
+//    class ContentHostingController<T: View>: UIHostingController<T> {
+//        override var preferredStatusBarStyle: UIStatusBarStyle {
+//            .lightContent
+//        }
+//    }
 }
-
-

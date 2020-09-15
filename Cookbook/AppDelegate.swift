@@ -18,6 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         SettingsConnector.initialize()
+        
+//        TestRecipes.chocolateCake_en()
+//        TestRecipes.smoothie_en()
+//        TestRecipes.salad_en()
+//        TestRecipes.lemonade_en()
+//        TestRecipes.sandwich_en()
+//        TestRecipes.burger_en()
+//        TestRecipes.muffins_en()
+//        TestRecipes.lasagne_en()
+//        TestRecipes.bowl_en()
+//        TestRecipes.chiliConCarne_en()
+        
         // Set-up UI
         setNavBarAppearence()
         return true
@@ -42,13 +54,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
-
 }
 

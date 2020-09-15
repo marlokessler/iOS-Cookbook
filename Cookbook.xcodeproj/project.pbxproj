@@ -63,6 +63,7 @@
 		43BCD36D24F27AD00041447D /* RecipesOverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BCD36C24F27AD00041447D /* RecipesOverviewController.swift */; };
 		43BCD37124F2FC700041447D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BCD37024F2FC700041447D /* Store.swift */; };
 		43F85C8F2506C8CD00A5004C /* SettingsConntector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F85C8E2506C8CD00A5004C /* SettingsConntector.swift */; };
+		43F85C9425075B3F00A5004C /* TestRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F85C9325075B3F00A5004C /* TestRecipes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,6 +128,7 @@
 		43BCD36C24F27AD00041447D /* RecipesOverviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesOverviewController.swift; sourceTree = "<group>"; };
 		43BCD37024F2FC700041447D /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		43F85C8E2506C8CD00A5004C /* SettingsConntector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsConntector.swift; sourceTree = "<group>"; };
+		43F85C9325075B3F00A5004C /* TestRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRecipes.swift; sourceTree = "<group>"; };
 		4FC1528750CB84A9529F463B /* Pods_Cookbook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cookbook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E8E784E4C6919F9D5B86AB /* Pods-Cookbook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cookbook.debug.xcconfig"; path = "Target Support Files/Pods-Cookbook/Pods-Cookbook.debug.xcconfig"; sourceTree = "<group>"; };
 		A8FE6CCB8C893EF91A3052E6 /* Pods-Cookbook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cookbook.release.xcconfig"; path = "Target Support Files/Pods-Cookbook/Pods-Cookbook.release.xcconfig"; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				436CDECE250559D3007007B2 /* Settings.bundle */,
 				436CDEBC25054858007007B2 /* Localizable.stringsdict */,
 				4323FAF924F677160098DE4B /* GoogleService-Info.plist */,
+				43F85C9325075B3F00A5004C /* TestRecipes.swift */,
 				43BCD33224F197640041447D /* SwiftUI */,
 				43BCD30D24F196260041447D /* Preview Content */,
 			);
@@ -557,6 +560,7 @@
 				43BCD34424F197640041447D /* RecipesOverview.swift in Sources */,
 				4396DB0024F3C03300CB3CE5 /* GeometryKey.swift in Sources */,
 				43278AD324FD0E25009377D6 /* InstructionsViewController.swift in Sources */,
+				43F85C9425075B3F00A5004C /* TestRecipes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,7 +738,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Cookbook/Cookbook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Cookbook/Preview Content\"";
 				DEVELOPMENT_TEAM = 3Y4M3JUQDS;
@@ -745,8 +749,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cookbook.Cookbook;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.connapptivity.cookbook.cookbookapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
@@ -761,7 +765,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Cookbook/Cookbook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Cookbook/Preview Content\"";
 				DEVELOPMENT_TEAM = 3Y4M3JUQDS;
 				ENABLE_PREVIEWS = YES;
@@ -771,8 +775,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.8.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cookbook.Cookbook;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.connapptivity.cookbook.cookbookapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
