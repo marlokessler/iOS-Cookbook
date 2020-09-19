@@ -10,18 +10,8 @@ import WhatsNewKit
 import UIKit
 
 class Introscreen {
-    static func initialize(on viewController: UIViewController) {
-        if !UserDefaults().bool(forKey: "IntroScreenShown") {
-            present(on: viewController)
-            
-            // Set marker that intro screen has been shown
-            UserDefaults().set(true, forKey: "IntroScreenShown")
-        }
-    }
-    
-    private static func present(on viewController: UIViewController) {
-        let introViewController = WhatsNewViewController(whatsNew: intro, configuration: configuration)
-        viewController.present(introViewController, animated: true)
+    static func instantiate() -> WhatsNewViewController {
+        WhatsNewViewController(whatsNew: intro, configuration: configuration)
     }
     
     private static var intro: WhatsNew = {

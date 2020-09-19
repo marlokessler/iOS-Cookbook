@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecipeViewController: UIViewController {
+class RecipeViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var keyboardViewHeightConstraint: NSLayoutConstraint!
     

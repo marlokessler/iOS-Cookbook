@@ -56,7 +56,7 @@ class Store<T: NSManagedObject>: PersistentContainer {
         return container
     }()
     
-    var values = [T]()
+    private(set) var values = [T]()
     
     private var entityName = ""
     

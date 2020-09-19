@@ -8,18 +8,21 @@
 
 import UIKit
 
-class NewRecipeViewController: UIViewController {
+class NewRecipeViewController: UIViewController, Storyboarded {
 
     @IBOutlet weak var previewNameLabel: UILabel!
     @IBOutlet weak var preView: UIView!
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var keyboardHeightConstraint: NSLayoutConstraint!
     
-    var delegate: NewRecipeDelegate?
+    var coordinator: RecipesCoordinatorProtocol?
     var tapOutsideKeyboardRecognizer: UIGestureRecognizer?
-    
-    
-    
+}
+
+
+
+// MARK: - View Management
+extension NewRecipeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
@@ -34,8 +37,6 @@ class NewRecipeViewController: UIViewController {
         super.viewDidAppear(animated)
         titleField.selectAll(nil)
     }
-    
-    
     
     private func setUpViews() {
         setNavButtons()
@@ -74,7 +75,22 @@ class NewRecipeViewController: UIViewController {
     
     private func dismiss() {
         navigationController?.dismiss(animated: true, completion: nil)
-    }    
+    }
+    
+    private func show(_ recipe: Recipe) {
+        coordinator?.show(recipe, inEditMode: true, animated: false)
+        self.dismiss()
+    }
+}
+
+
+
+//MARK: - Recipe Management
+extension NewRecipeViewController {
+    private func createRecipe(with title: String) -> Recipe {
+        let recipe = Recipe.createRecipe(with: title)
+        return recipe
+    }
 }
 
 
@@ -88,8 +104,9 @@ extension NewRecipeViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard titleIsValid else { return true }
-        delegate?.createRecipe(with: titleField.text!)
-        self.dismiss()
+        let title = titleField.text!
+        let newRecipe = createRecipe(with: title)
+        show(newRecipe)
         return true
     }
     
@@ -109,8 +126,8 @@ extension NewRecipeViewController {
     
     @objc private func createNewRecipe(_ sender: UIBarButtonItem) {
         let title = titleField.text!
-        self.delegate?.createRecipe(with: title)
-        self.dismiss()
+        let newRecipe = createRecipe(with: title)
+        show(newRecipe)
     }
     
     @objc private func cancelNewRecipe(_ sender: UIBarButtonItem) {
@@ -163,8 +180,4 @@ extension NewRecipeViewController {
         self.view.endEditing(true)
         self.dismiss()
     }
-}
-
-protocol NewRecipeDelegate {
-    func createRecipe(with title: String)
 }

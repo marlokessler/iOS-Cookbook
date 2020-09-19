@@ -10,7 +10,9 @@ import UIKit
 import CoreData
 import SwiftExtensions
 
-class RecipesOverviewController: UIViewController {
+class RecipesOverviewController: UIViewController, Storyboarded {
+    
+    var coordinator: RecipesCoordinatorProtocol?
     
     var recipes = RecipesStore.shared.values
     
@@ -144,18 +146,7 @@ extension RecipesOverviewController {
         print("Add button pressed")
         #endif
         isInEditMode = false
-        showNewRecipeVC()
-    }
-    
-    private func showNewRecipeVC() {
-        guard let newRecipeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewRecipeVC") as? NewRecipeViewController else { return }
-        newRecipeVC.delegate = self
-        
-        let navigationController = UINavigationController(rootViewController: newRecipeVC)
-        navigationController.modalPresentationStyle = .overCurrentContext
-        navigationController.modalTransitionStyle   = .crossDissolve
-        
-        self.present(navigationController, animated: true, completion: nil)
+        coordinator?.createRecipe()
     }
 }
 
@@ -212,16 +203,7 @@ extension RecipesOverviewController: UICollectionViewDelegate {
         #endif
         let selectedRecipe = recipes[indexPath.row]
                 
-        guard let recipeVC = getVC(for: selectedRecipe) else { return }
-        navigationController?.pushViewController(recipeVC, animated: true)
-    }
-    
-    private func getVC(for recipe: Recipe) -> RecipeViewController? {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let recipeVC = storyboard.instantiateViewController(withIdentifier: "RecipeViewController") as? RecipeViewController else { return nil }
-        
-        recipeVC.recipe = recipe
-        return recipeVC
+        coordinator?.show(selectedRecipe, inEditMode: false, animated: true)
     }
 }
 
@@ -327,23 +309,5 @@ extension RecipesOverviewController: RecipeCollectionViewCellDelegate {
             // TODO: Find the reasons, why those errors occure.
             self.collectionView.reloadData()
         })
-    }
-}
-
-
-
-// MARK: - NewRecipeDelegate
-extension RecipesOverviewController: NewRecipeDelegate {
-    func createRecipe(with title: String) {
-        let recipesStore = RecipesStore.shared
-        
-        let recipe = Recipe(context: recipesStore.objectContext)
-        recipe.title = title
-        
-        recipesStore.add(recipe)
-        
-        guard let recipeVC = getVC(for: recipe) else { return }
-        recipeVC.shouldAppearInEditMode = true
-        navigationController?.pushViewController(recipeVC, animated: true)
     }
 }

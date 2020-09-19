@@ -10,39 +10,48 @@ import UIKit
 import SwiftUI
 import CoreData
 import WhatsNewKit
+import CoreSpotlight
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
+    var coordinator: MainCoordinator?
     var window: UIWindow?
     
-    func sceneDidBecomeActive(_ scene: UIScene) {
-        if let window = window,
-            let navController = window.rootViewController as? UINavigationController,
-            let viewController = navController.visibleViewController as? RecipesOverviewController {
-            Introscreen.initialize(on: viewController)
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        setRootView(for: scene)
+        coordinator?.checkForIntroScreen()
+        connectionOptions.userActivities.forEach { userActivity in
+            self.handle(userActivity)
+            
         }
     }
     
-
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-//        let recipesOverview = RecipesOverview()
-//
-//        if let windowScene = scene as? UIWindowScene {
-//            let window = UIWindow(windowScene: windowScene)
-//            let rootViewController = ContentHostingController(rootView: recipesOverview.environment(\.managedObjectContext, context))
-//            window.rootViewController = rootViewController
-//            self.window = window
-//            window.makeKeyAndVisible()
-//
-//            // Show intro screen, if not shown before
-//        }
+    private func setRootView(for scene: UIScene) {
+        let navController = UINavigationController()
+        coordinator = MainCoordinator(rootViewController: navController)
+        coordinator?.start()
+        
+        window = UIWindow(windowScene: scene as! UIWindowScene)
+        window?.rootViewController = coordinator?.rootViewController
+        window?.makeKeyAndVisible()
     }
     
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        handle(userActivity)
+    }
     
-    // MARK: - Change status bar style
-//    class ContentHostingController<T: View>: UIHostingController<T> {
-//        override var preferredStatusBarStyle: UIStatusBarStyle {
-//            .lightContent
-//        }
-//    }
+    private func handle(_ userActivity: NSUserActivity) {
+        switch userActivity.activityType {
+        case CSSearchableItemActionType: handleSearch(userActivity: userActivity)
+        default: break
+        }
+    }
+    
+    private func handleSearch(userActivity: NSUserActivity) {
+        guard
+            let uniqueIdentifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String,
+            let selectedRecipe = RecipesStore.shared.values.first(where: { $0.id == uniqueIdentifier })
+        else { return }
+        coordinator!.show(selectedRecipe, inEditMode: false, animated: false)
+    }
 }

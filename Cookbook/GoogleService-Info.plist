@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>476319516306-8d348nj6rjd68htlrp9lhg9716nputvu.apps.googleusercontent.com</string>
+	<string>476319516306-v6fi60jf8q9prsoca96jg0e834tmh48j.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.476319516306-8d348nj6rjd68htlrp9lhg9716nputvu</string>
+	<string>com.googleusercontent.apps.476319516306-v6fi60jf8q9prsoca96jg0e834tmh48j</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDIBiXW0Y8h78TBw9BXxVpyyDX_14i5QQc</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.cookbook.Cookbook</string>
+	<string>com.connapptivity.cookbook.cookbookapp</string>
 	<key>PROJECT_ID</key>
 	<string>cookbook-development-c3756</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:476319516306:ios:bd4e835265e8e5e7fe484b</string>
+	<string>1:476319516306:ios:dd9c75053039686dfe484b</string>
 	<key>DATABASE_URL</key>
 	<string>https://cookbook-development-c3756.firebaseio.com</string>
 </dict>
