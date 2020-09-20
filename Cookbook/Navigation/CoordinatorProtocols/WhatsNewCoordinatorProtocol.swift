@@ -1,5 +1,5 @@
 //
-//  IntroCoordinatorProtocol.swift
+//  WhatsNewCoordinatorProtocol.swift
 //  Cookbook
 //
 //  Created by Marlo Kessler on 19.09.20.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol IntroCoordinatorProtocol {
-    func checkForIntroScreen()
+protocol WhatsNewCoordinatorProtocol {
+    func showFeaturesIfUnshown()
 }

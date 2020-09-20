@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>What&apos;s new</key>
+	<string>Was gibt&apos;s neues?</string>
+	<key>All your recipes are only one tap away. You can search for all of them in Spotlight 🔎</key>
+	<string>All deine Rezepte sind nur einen Tap entfernt. Du kannst sie ganz einfach über die Spotlight-Suche suchen 🔎</string>
+	<key>Search your favorite Recipes in Spotlight</key>
+	<string>Suche nach deinen Lieblingsrezepten in Spotlight</string>
 	<key>Recipe</key>
 	<string>Rezept</string>
 	<key>StringKey</key>

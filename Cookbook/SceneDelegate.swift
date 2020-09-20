@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         setRootView(for: scene)
-        coordinator?.checkForIntroScreen()
+        coordinator?.showFeaturesIfUnshown()
         connectionOptions.userActivities.forEach { userActivity in
             self.handle(userActivity)
             

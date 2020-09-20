@@ -50,16 +50,9 @@ extension MainCoordinator: RecipesCoordinatorProtocol {
 
 
 // MARK: - RecipesCoordinator
-extension MainCoordinator: IntroCoordinatorProtocol {
-    func checkForIntroScreen() {
-        let introScreenWasPresentedBefore = UserDefaults().bool(forKey: "IntroScreenShown")
-        
-        if !introScreenWasPresentedBefore {
-            let vc = Introscreen.instantiate()
-            rootViewController.present(vc, animated: true, completion: nil)
-                        
-            // Set marker that intro screen has been shown
-            UserDefaults().set(true, forKey: "IntroScreenShown")
-        }
+extension MainCoordinator: WhatsNewCoordinatorProtocol {
+    func showFeaturesIfUnshown() {
+        guard let vc = FeaturesViewController.instantiate() else { return }
+        rootViewController.present(vc, animated: true, completion: nil)
     }
 }
