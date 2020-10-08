@@ -44,17 +44,31 @@ class Store<T: NSManagedObject>: PersistentContainer {
     }
     
     var persistentContainer: NSPersistentContainer = {
-        
         let container = NSPersistentContainer(name: "Model")
-        
+        configure(container)
         container.loadPersistentStores { _, error in
-            if let error = error as NSError? {
+            if let error = error  {
                 Crashlytics.crashlytics().record(error: error)
             }
         }
         
         return container
     }()
+    
+    private static func configure(_ container: NSPersistentContainer) {
+        guard let fileContainer = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.connapptivity.cookbook.cookbookapp.database")
+        else {
+            Crashlytics.crashlytics().record(error: StoreError.loadContainerURLError)
+            fatalError("Shared file container could not be created.")
+        }
+
+        let storeURL = fileContainer.appendingPathComponent("CookbookDB.sqlite")
+        #if DEBUG
+        print("Group URL CookbookDB: \(storeURL)")
+        #endif
+        let storeDescription = NSPersistentStoreDescription(url: storeURL)
+        container.persistentStoreDescriptions = [storeDescription]
+    }
     
     private(set) var values = [T]()
     
@@ -101,5 +115,9 @@ class Store<T: NSManagedObject>: PersistentContainer {
             print("Could not store changes: \(error), \(error.userInfo)")
             #endif
         }
+    }
+    
+    private enum StoreError: Error {
+        case loadContainerURLError
     }
 }

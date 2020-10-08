@@ -186,7 +186,7 @@
             </objects>
             <point key="canvasLocation" x="986" y="100"/>
         </scene>
-        <!--My Recipes-->
+        <!--Recipes Overview Controller-->
         <scene sceneID="42g-gr-YmP">
             <objects>
                 <viewController storyboardIdentifier="RecipesOverviewController" id="x0I-y7-6Xw" customClass="RecipesOverviewController" customModule="Cookbook" customModuleProvider="target" sceneMemberID="viewController">
@@ -217,7 +217,7 @@
                             <constraint firstItem="RAv-8a-thM" firstAttribute="top" secondItem="hrp-qj-Nnh" secondAttribute="top" id="fFD-i0-ehs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My Recipes" largeTitleDisplayMode="always" id="5wZ-gs-hKv"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="5wZ-gs-hKv"/>
                     <connections>
                         <outlet property="collectionView" destination="RAv-8a-thM" id="YdQ-EA-ZVm"/>
                     </connections>
@@ -229,7 +229,6 @@
         <!--Navigation Controller-->
         <scene sceneID="ogn-ki-B8T">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BVU-4z-32f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="4Xg-fg-IGr" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="gJk-9q-JM1">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -248,6 +247,7 @@
                         <segue destination="x0I-y7-6Xw" kind="relationship" relationship="rootViewController" id="3LT-Nq-TsO"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BVU-4z-32f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-586" y="100"/>
         </scene>
@@ -679,7 +679,7 @@
                                             <constraint firstAttribute="height" constant="35" id="dXD-AP-CaX"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jtm-aD-WaV" userLabel="Preview Container">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="434"/>

@@ -10,58 +10,55 @@ import WhatsNewKit
 import UIKit
 
 class FeaturesViewController {
+    
     private init() {}
     
     static func instantiate() -> WhatsNewViewController? {
-        if let storedAppVersion = storedAppVersion {
-            let whatsNewViewController = getFeaturesViewController(with: storedAppVersion)
-            return whatsNewViewController
-        } else {
-            setCurrentAppVersion()
-            return introViewController
-        }
+        let appVersioner = AppVersioner.shared
+        guard appVersioner.appHasNewVersion,
+              let newVersion = appVersioner.currentVersion,
+              let previousVersion = appVersioner.previousVersion else { return nil }
         
+        let whatsNewViewController = createWhatsNewVC(from: previousVersion, to: newVersion)
+        return whatsNewViewController
     }
     
-    private static var storedAppVersion: String? {
-        return UserDefaults(suiteName: "WhatsNewVC")?.string(forKey: "AppVersion")
-    }
-    
-    private static var currentAppVersion: String? {
-        return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-    }
-    
-    private static func setCurrentAppVersion() {
-        guard
-            let currentAppVersion = currentAppVersion,
-            let defaults = UserDefaults(suiteName: "WhatsNewVC")
-        else { return }
+    private static func createWhatsNewVC(from previousVersion: AppVersioner.Version, to currentVersion: AppVersioner.Version) -> WhatsNewViewController? {
+        let whatsNewItems = getWhatsNewItems(from: previousVersion, to: currentVersion)
+        guard !whatsNewItems.isEmpty else { return nil }
         
-        defaults.set(currentAppVersion, forKey: "AppVersion")
-    }
-    
-    private static func getFeaturesViewController(with storedAppVersion: String) -> WhatsNewViewController? {
-        guard
-            let currentAppVersion = currentAppVersion,
-            currentAppVersion != storedAppVersion,
-            let whatsNewVC = createWhatsNewVC(for: currentAppVersion)
-        else { return nil }
-        setCurrentAppVersion()
-        return whatsNewVC
-    }
-    
-    private static func createWhatsNewVC(for appVersion: String) -> WhatsNewViewController? {
-        let whatsNewItems: [WhatsNew.Item]
-        
-        switch currentAppVersion {
-        case "1.1.0": whatsNewItems = whatsNewInVersion_1_1_0
-        default: return nil
-        }
-        
-        let whatsNew = WhatsNew(title: "What's new".localized(),
-                                items: whatsNewItems)
+        let whatsNew = WhatsNew(title: (appDidLaunchBefore ? "Welcome to Cookbook" : "What's new").localized(), items: whatsNewItems)
         return WhatsNewViewController(whatsNew: whatsNew, configuration: baseConfiguration)
     }
+    
+    private static var appDidLaunchBefore: Bool {
+        return AppVersioner.shared.currentVersion ?? .v1_0_0 > .v1_0_0
+    }
+    
+    private static func getWhatsNewItems(from startVersion: AppVersioner.Version, to endVersion: AppVersioner.Version) -> [WhatsNew.Item] {
+        var items = [WhatsNew.Item]()
+        var currentVersion = startVersion
+        
+        while currentVersion <= endVersion {
+            let newItems = getWhatsNewItems(for: currentVersion)
+            items.append(contentsOf: newItems)
+            
+            guard let followingVersion = currentVersion.followingVersion else { break }
+            currentVersion = followingVersion
+        }
+        
+        return items
+    }
+    
+    private static func getWhatsNewItems(for version: AppVersioner.Version) -> [WhatsNew.Item] {
+        switch version {
+        case .v1_0_0: return whatsNewInVersion_1_0_0
+        case .v1_1_0: return whatsNewInVersion_1_1_0
+        case .v1_2_0: return whatsNewInVersion_1_2_0
+        }
+    }
+    
+    
     
     private static var baseConfiguration: WhatsNewViewController.Configuration {
         var configuration = WhatsNewViewController.Configuration()
@@ -86,29 +83,18 @@ class FeaturesViewController {
     
     
     
-    // MARK: - Intro
-    private static var introViewController: WhatsNewViewController {
-        let whatsNew = WhatsNew(title: "Welcome to Cookbook".localized(),
-                                items: whatsNewInVersion_1_0_0 +
-                                       whatsNewInVersion_1_1_0
-                       )
-        return WhatsNewViewController(whatsNew: whatsNew, configuration: baseConfiguration)
-    }
-    
-    
-    
     // MARK: - 1.0.0
     private static var whatsNewInVersion_1_0_0: [WhatsNew.Item] {
         return [
             WhatsNew.Item(
-                title: "Store your favorite recipes".localized(),
+                title: "Store your recipes".localized(),
                 subtitle: "You can easily store all your favorite recipes in Cookbook 🥘🥗🧁".localized(),
-                image: nil
+                image: UIImage(systemName: "book")
             ),
             WhatsNew.Item(
                 title: "Access your recipes".localized(),
                 subtitle: "You can easily access your recipes when you need them and cook some magic 👩🏼‍🍳👨🏿‍🍳".localized(),
-                image: nil
+                image: UIImage(systemName: "wand.and.stars")
             )
         ]
     }
@@ -119,10 +105,27 @@ class FeaturesViewController {
     private static var whatsNewInVersion_1_1_0: [WhatsNew.Item] {
         return [
             WhatsNew.Item(
-                title: "Search your favorite Recipes in Spotlight".localized(),
+                title: "Spotlight Search".localized(),
                 subtitle: "All your recipes are only one tap away. You can search for all of them in Spotlight 🔎".localized(),
-                image: nil
+                image: UIImage(systemName: "magnifyingglass")
             )
         ]
+    }
+    
+    
+    
+    // MARK: - 1.2.0
+    private static var whatsNewInVersion_1_2_0: [WhatsNew.Item] {
+        if #available(iOS 14.0, *) {
+            return [
+                WhatsNew.Item(
+                    title: "Widget Support".localized(),
+                    subtitle: "View your latest recipes in widgets on your home screen📱".localized(),
+                    image: UIImage(systemName: "rectangle.3.offgrid")
+                )
+            ]
+        } else {
+            return []
+        }
     }
 }

@@ -6,34 +6,10 @@
 	<string>What&apos;s new</string>
 	<key>All your recipes are only one tap away. You can search for all of them in Spotlight 🔎</key>
 	<string>All your recipes are only one tap away. You can search for all of them in Spotlight 🔎</string>
-	<key>Search your favorite Recipes in Spotlight</key>
-	<string>Search your favorite Recipes in Spotlight</string>
+	<key>Spotlight Search</key>
+	<string>Spotlight Search</string>
 	<key>Recipe</key>
 	<string>Recipe</string>
-	<key>StringKey</key>
-	<dict>
-		<key>NSStringLocalizedFormatKey</key>
-		<string>%#@VARIABLE@</string>
-		<key>VARIABLE</key>
-		<dict>
-			<key>NSStringFormatSpecTypeKey</key>
-			<string>NSStringPluralRuleType</string>
-			<key>NSStringFormatValueTypeKey</key>
-			<string></string>
-			<key>zero</key>
-			<string></string>
-			<key>one</key>
-			<string></string>
-			<key>two</key>
-			<string></string>
-			<key>few</key>
-			<string></string>
-			<key>many</key>
-			<string></string>
-			<key>other</key>
-			<string></string>
-		</dict>
-	</dict>
 	<key>Do you really want to delete &quot;%@&quot;?</key>
 	<string>Do you really want to delete &quot;%@&quot;?</string>
 	<key>Delete Recipe</key>
@@ -64,8 +40,8 @@
 	<string>Rest time: %@ min</string>
 	<key>Welcome to Cookbook</key>
 	<string>Welcome to Cookbook</string>
-	<key>Store your favorite recipes</key>
-	<string>Store your favorite recipes</string>
+	<key>Store your recipes</key>
+	<string>Store your recipes</string>
 	<key>You can easily store all your favorite recipes in Cookbook 🥘🥗🧁</key>
 	<string>You can easily store all your favorite recipes in Cookbook 🥘🥗🧁</string>
 	<key>Access your recipes</key>
@@ -74,5 +50,9 @@
 	<string>You can easily access your recipes when you need them and cook some magic 👩🏼‍🍳👨🏿‍🍳</string>
 	<key>Let&apos;s start!</key>
 	<string>Let&apos;s start!</string>
+	<key>Widget Support</key>
+	<string>Widget Support</string>
+	<key>View your latest recipes in widgets on your home screen📱</key>
+	<string>View your latest recipes in widgets on your home screen📱</string>
 </dict>
 </plist>

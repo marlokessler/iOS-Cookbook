@@ -1,0 +1,6 @@
+framework module Pods_CookbookTests {
+  umbrella header "Pods-CookbookTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

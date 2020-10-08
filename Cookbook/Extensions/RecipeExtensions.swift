@@ -8,7 +8,6 @@
 
 import Foundation
 import CoreData
-import Firebase
 
 extension Recipe {
     
@@ -22,18 +21,5 @@ extension Recipe {
     class IngredientKeys {
         static let amount = "amount"
         static let description = "ingredientDescription"
-    }
-    
-    static func createRecipe(with title: String) -> Recipe {
-        let recipesStore = RecipesStore.shared
-        let recipe = Recipe(context: recipesStore.objectContext)
-        
-        recipe.id = UUID().uuidString
-        recipe.creationDate = Date()
-        recipe.title = title
-        
-        recipesStore.add(recipe)
-        
-        return recipe
     }
 }

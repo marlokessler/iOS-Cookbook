@@ -5,35 +5,11 @@
 	<key>What&apos;s new</key>
 	<string>Was gibt&apos;s neues?</string>
 	<key>All your recipes are only one tap away. You can search for all of them in Spotlight 🔎</key>
-	<string>All deine Rezepte sind nur einen Tap entfernt. Du kannst sie ganz einfach über die Spotlight-Suche suchen 🔎</string>
-	<key>Search your favorite Recipes in Spotlight</key>
-	<string>Suche nach deinen Lieblingsrezepten in Spotlight</string>
+	<string>All deine Rezepte sind nur einen Tap entfernt. Du kannst sie ganz einfach in Spotlightsuchen 🔎</string>
+	<key>Spotlight Search</key>
+	<string>Spotlight Suche</string>
 	<key>Recipe</key>
 	<string>Rezept</string>
-	<key>StringKey</key>
-	<dict>
-		<key>NSStringLocalizedFormatKey</key>
-		<string>%#@VARIABLE@</string>
-		<key>VARIABLE</key>
-		<dict>
-			<key>NSStringFormatSpecTypeKey</key>
-			<string>NSStringPluralRuleType</string>
-			<key>NSStringFormatValueTypeKey</key>
-			<string></string>
-			<key>zero</key>
-			<string></string>
-			<key>one</key>
-			<string></string>
-			<key>two</key>
-			<string></string>
-			<key>few</key>
-			<string></string>
-			<key>many</key>
-			<string></string>
-			<key>other</key>
-			<string></string>
-		</dict>
-	</dict>
 	<key>Do you really want to delete &quot;%@&quot;?</key>
 	<string>Möchtest Du &quot;%@&quot; wirklich löschen?</string>
 	<key>Delete Recipe</key>
@@ -64,8 +40,8 @@
 	<string>Ruhezeit: %@ Min</string>
 	<key>Welcome to Cookbook</key>
 	<string>Willkommen bei Cookbook</string>
-	<key>Store your favorite recipes</key>
-	<string>Speichere deine Lieblingsrezepte</string>
+	<key>Store your recipes</key>
+	<string>Speichere deine Rezepte</string>
 	<key>You can easily store all your favorite recipes in Cookbook 🥘🥗🧁</key>
 	<string>Du kannst all deine Lieblingsrezepte ganz einfach in Cookbook speichern 🥘🥗🧁</string>
 	<key>Access your recipes</key>
@@ -74,5 +50,9 @@
 	<string>Du kannst ganz leicht auf deine Rezepte zugreifen, wenn Du sie benötigst 👩🏼‍🍳👨🏿‍🍳</string>
 	<key>Let&apos;s start!</key>
 	<string>Jetzt loslegen!</string>
+	<key>Widget Support</key>
+	<string>Widget Support</string>
+	<key>View your latest recipes in widgets on your home screen📱</key>
+	<string>Lasse Dir deine neusten Rezepte direkt auf deinen Home-Screen anzeigen📱</string>
 </dict>
 </plist>

@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "43D03932252DE150000A97B7"
+               BuildableName = "AppVersionerTest.xctest"
+               BlueprintName = "AppVersionerTest"
+               ReferencedContainer = "container:Cookbook.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "43D0394B252DE19B000A97B7"
+               BuildableName = "CookbookTests.xctest"
+               BlueprintName = "CookbookTests"
+               ReferencedContainer = "container:Cookbook.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

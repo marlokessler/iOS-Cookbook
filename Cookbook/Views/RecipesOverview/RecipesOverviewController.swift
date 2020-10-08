@@ -24,7 +24,9 @@ class RecipesOverviewController: UIViewController, Storyboarded {
         }
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +78,7 @@ class RecipesOverviewController: UIViewController, Storyboarded {
 extension RecipesOverviewController {
     @objc private func recipeChanges(notification: Notification) {
         #if DEBUG
-        print("Received a \"recipes changed\" notification.")
+        print("Received a \"recipes changed\" notification in \(String(describing: self)).")
         #endif
         guard let change = notification.object as? RecipesStore.Update else { return }
         
@@ -119,8 +121,31 @@ extension RecipesOverviewController {
 // MARK: - NavigationBarItems
 extension RecipesOverviewController {
     func updateNavBar() {
-        guard let navItem = navigationController?.navigationBar.topItem else { return }
+        setNavTitleView()
+        setBarButtonItems()
+    }
+    
+    private func setNavTitleView() {
+        // In order to center the title view image no matter what buttons there are, do not set the
+        // image view as title view, because it doesn't work. If there is only one button, the image
+        // will not be aligned. Instead, a content view is set as title view, then the image view is
+        // added as child of the content view. Finally, using constraints the image view is aligned
+        // inside its parent.
+        let contentView = UIView()
+        self.navigationItem.titleView = contentView
         
+        let imageView         = UIImageView(image: #imageLiteral(resourceName: "CookbookIcon"))
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        self.navigationItem.titleView?.addSubview(imageView)
+
+        // Setting a top and bottom constraint does not size properly, because containerview is not bound to navbar.
+        imageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+    }
+    
+    private func setBarButtonItems() {
         var rightBarButtonItems = [UIBarButtonItem]()
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addButtonPressed(sender:)))
@@ -131,9 +156,9 @@ extension RecipesOverviewController {
             rightBarButtonItems.append(editButton)
         }
         
-        navItem.setRightBarButtonItems(rightBarButtonItems, animated: true)
+        self.navigationItem.setRightBarButtonItems(rightBarButtonItems, animated: true)
     }
-    
+        
     @objc func editButtonPressed(sender: UIBarButtonItem) {
         #if DEBUG
         print("Edit button pressed")

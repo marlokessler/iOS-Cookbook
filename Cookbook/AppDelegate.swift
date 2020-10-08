@@ -15,14 +15,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last)
         FirebaseApp.configure()
         AppVersioner.initialize()
         SettingsConnector.initialize()
         SpotlightIndexer.initialize()
         
+        if #available(iOS 14, *) {
+            WidgetsConnector.initialize()
+        }
+        
 //        TestRecipes.chocolateCake_en()
 //        TestRecipes.smoothie_en()
 //        TestRecipes.salad_en()
+        
 //        TestRecipes.lemonade_en()
 //        TestRecipes.sandwich_en()
 //        TestRecipes.burger_en()
@@ -46,11 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().standardAppearance = appearance
         
         UINavigationBar.appearance().tintColor = .white
-    }
-    
-    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        NSLog("RECEIVED IN APP")
-        return true
     }
 }
 

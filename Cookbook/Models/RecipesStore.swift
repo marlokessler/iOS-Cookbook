@@ -43,6 +43,21 @@ class RecipesStore: Store<Recipe> {
     
     
     
+    static func createRecipe(with title: String) -> Recipe {
+        let recipesStore = RecipesStore.shared
+        let recipe = Recipe(context: recipesStore.objectContext)
+        
+        recipe.id = UUID().uuidString
+        recipe.creationDate = Date()
+        recipe.title = title
+        
+        recipesStore.add(recipe)
+        
+        return recipe
+    }
+    
+    
+    
     // MARK: - Enums
     enum Update {
         case added(_ recipe: Recipe)

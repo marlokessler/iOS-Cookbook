@@ -15,6 +15,7 @@ extension Color {
     static var background2: Color { Color("Background 2") }
     static var backgroundAccent: Color { Color("BackgroundAccent") }
     static var introScreenPrimary: Color { Color("IntroScreenPrimary") }
+    static var introScreenInverted: Color { Color("IntroScreenInverted") }
 }
 
 extension UIColor {
@@ -23,4 +24,5 @@ extension UIColor {
     static var background2: UIColor { UIColor(named: "Background 2") ?? .systemPurple}
     static var backgroundAccent: UIColor { UIColor(named: "BackgroundAccent") ?? .systemPurple}
     static var introScreenPrimary: UIColor { UIColor(named: "IntroScreenPrimary") ?? .white }
+    static var introScreenInverted: UIColor { UIColor(named: "IntroScreenInverted") ?? .systemPurple }
 }

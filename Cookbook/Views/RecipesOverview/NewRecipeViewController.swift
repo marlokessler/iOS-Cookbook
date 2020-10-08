@@ -88,7 +88,7 @@ extension NewRecipeViewController {
 //MARK: - Recipe Management
 extension NewRecipeViewController {
     private func createRecipe(with title: String) -> Recipe {
-        let recipe = Recipe.createRecipe(with: title)
+        let recipe = RecipesStore.createRecipe(with: title)
         return recipe
     }
 }
