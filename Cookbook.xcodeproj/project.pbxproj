@@ -10,6 +10,8 @@
 		1988457649B0699F71C41361 /* Pods_Cookbook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC1528750CB84A9529F463B /* Pods_Cookbook.framework */; };
 		43010352251C8265006B6E92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43C470AA251B919C002C3EB5 /* Assets.xcassets */; };
 		43010357251C82AA006B6E92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BCD32D24F196C10041447D /* Assets.xcassets */; };
+		430E7FAA25304CFF00A25961 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 430E7FA925304CFF00A25961 /* GoogleService-Info.plist */; };
+		430E7FAB25304CFF00A25961 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 430E7FA925304CFF00A25961 /* GoogleService-Info.plist */; };
 		4323FAF524F6436B0098DE4B /* CellContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4323FAF424F6436B0098DE4B /* CellContainer.swift */; };
 		4323FAF824F659890098DE4B /* WhatsNewKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4323FAF724F659890098DE4B /* WhatsNewKit */; };
 		43278ACF24FCD485009377D6 /* PortionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43278ACE24FCD485009377D6 /* PortionsViewController.swift */; };
@@ -18,7 +20,6 @@
 		433EDCB42514F76A0039F7A8 /* SpotlightIndexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433EDCB32514F76A0039F7A8 /* SpotlightIndexer.swift */; };
 		433EDCBA251505AC0039F7A8 /* GeneralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433EDCB9251505AC0039F7A8 /* GeneralExtensions.swift */; };
 		434C048C2516692B00309055 /* AppVersioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434C048B2516692B00309055 /* AppVersioner.swift */; };
-		43632FE225160F3500DDD6D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43632FE125160F3500DDD6D8 /* GoogleService-Info.plist */; };
 		43632FE72516185100DDD6D8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43632FE62516185100DDD6D8 /* Coordinator.swift */; };
 		43632FEC251618C600DDD6D8 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43632FEB251618C600DDD6D8 /* Storyboarded.swift */; };
 		43632FEF251619E700DDD6D8 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43632FEE251619E700DDD6D8 /* MainCoordinator.swift */; };
@@ -90,7 +91,6 @@
 		43C4711A251B9ED9002C3EB5 /* RecipesWidgetDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C47119251B9ED9002C3EB5 /* RecipesWidgetDataContainer.swift */; };
 		43D039BA252DE6B9000A97B7 /* AppVersionerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D039B9252DE6B9000A97B7 /* AppVersionerTests.swift */; };
 		43F07453251C9CED00887ED3 /* RecipeCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F07452251C9CED00887ED3 /* RecipeCellView.swift */; };
-		43F07464251CC4FF00887ED3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43632FE125160F3500DDD6D8 /* GoogleService-Info.plist */; };
 		43F07468251CEF0C00887ED3 /* WidgetLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F07467251CEF0C00887ED3 /* WidgetLink.swift */; };
 		43F0746C251CEFFB00887ED3 /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F0746B251CEFFB00887ED3 /* AddRecipeView.swift */; };
 		43F85C8F2506C8CD00A5004C /* SettingsConntector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F85C8E2506C8CD00A5004C /* SettingsConntector.swift */; };
@@ -135,6 +135,7 @@
 		1B1380CD7D6D736483E29282 /* Pods_CookbookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CookbookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		237461C49EE8F185C13D2E7E /* Pods-Cookbook-CookbookWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cookbook-CookbookWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-Cookbook-CookbookWidgetExtension/Pods-Cookbook-CookbookWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		2DE33A86295A9F58A92FC0DB /* Pods-CookbookWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CookbookWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-CookbookWidgetExtension/Pods-CookbookWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		430E7FA925304CFF00A25961 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4323FAF424F6436B0098DE4B /* CellContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContainer.swift; sourceTree = "<group>"; };
 		43278ACE24FCD485009377D6 /* PortionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortionsViewController.swift; sourceTree = "<group>"; };
 		43278AD024FD0DAA009377D6 /* IngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewController.swift; sourceTree = "<group>"; };
@@ -142,7 +143,6 @@
 		433EDCB32514F76A0039F7A8 /* SpotlightIndexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightIndexer.swift; sourceTree = "<group>"; };
 		433EDCB9251505AC0039F7A8 /* GeneralExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralExtensions.swift; sourceTree = "<group>"; };
 		434C048B2516692B00309055 /* AppVersioner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersioner.swift; sourceTree = "<group>"; };
-		43632FE125160F3500DDD6D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		43632FE62516185100DDD6D8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		43632FEB251618C600DDD6D8 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		43632FEE251619E700DDD6D8 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -476,7 +476,6 @@
 				43B790C4250399A200035575 /* Cookbook.entitlements */,
 				436CDECE250559D3007007B2 /* Settings.bundle */,
 				436CDEBC25054858007007B2 /* Localizable.stringsdict */,
-				43632FE125160F3500DDD6D8 /* GoogleService-Info.plist */,
 				43F85C9325075B3F00A5004C /* TestRecipes.swift */,
 				43BCD33224F197640041447D /* SwiftUI */,
 				43BCD30D24F196260041447D /* Preview Content */,
@@ -566,6 +565,7 @@
 		43F9749D251B609A00D98135 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				430E7FA925304CFF00A25961 /* GoogleService-Info.plist */,
 				43F9749E251B60B000D98135 /* Models */,
 				43BCD32724F196B40041447D /* Extensions */,
 				43BCD32D24F196C10041447D /* Assets.xcassets */,
@@ -635,7 +635,7 @@
 				43BCD30024F196240041447D /* Resources */,
 				4323FAFB24F677710098DE4B /* ShellScript */,
 				433EDCA92514ED260039F7A8 /* Embed App Extensions */,
-				6EE792A21CD6A9E6B9D2FFE3 /* [CP] Embed Pods Frameworks */,
+				1E0FA0A58E1914EB623E64DC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -677,7 +677,7 @@
 				43D03948252DE19B000A97B7 /* Sources */,
 				43D03949252DE19B000A97B7 /* Frameworks */,
 				43D0394A252DE19B000A97B7 /* Resources */,
-				77EFFCECF0F0BD521CDC4A76 /* [CP] Embed Pods Frameworks */,
+				B1EF75DB4F6381455D2338E7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -748,7 +748,7 @@
 				43BCD30F24F196260041447D /* Preview Assets.xcassets in Resources */,
 				43BCD32F24F196C10041447D /* Assets.xcassets in Resources */,
 				436CDEBA25054858007007B2 /* Localizable.stringsdict in Resources */,
-				43632FE225160F3500DDD6D8 /* GoogleService-Info.plist in Resources */,
+				430E7FAA25304CFF00A25961 /* GoogleService-Info.plist in Resources */,
 				436CDEBE25054CBE007007B2 /* IngredientsViewCell.xib in Resources */,
 				436CDEC525054CF4007007B2 /* InstructionsViewCell.xib in Resources */,
 			);
@@ -759,7 +759,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43010352251C8265006B6E92 /* Assets.xcassets in Resources */,
-				43F07464251CC4FF00887ED3 /* GoogleService-Info.plist in Resources */,
+				430E7FAB25304CFF00A25961 /* GoogleService-Info.plist in Resources */,
 				43010357251C82AA006B6E92 /* Assets.xcassets in Resources */,
 				43C470C9251B91C9002C3EB5 /* Localizable.stringsdict in Resources */,
 			);
@@ -795,6 +795,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E0FA0A58E1914EB623E64DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cookbook/Pods-Cookbook-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cookbook/Pods-Cookbook-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cookbook/Pods-Cookbook-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3B382D7724953A05E06341A0 /* [CP] Check Pods Manifest.lock */ = {
@@ -838,24 +855,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
-		6EE792A21CD6A9E6B9D2FFE3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Cookbook/Pods-Cookbook-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Cookbook/Pods-Cookbook-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cookbook/Pods-Cookbook-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		77EFFCECF0F0BD521CDC4A76 /* [CP] Embed Pods Frameworks */ = {
+		B1EF75DB4F6381455D2338E7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1183,7 +1183,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Cookbook/Cookbook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Cookbook/Preview Content\"";
 				DEVELOPMENT_TEAM = 3Y4M3JUQDS;
@@ -1194,7 +1194,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.connapptivity.cookbook.cookbookapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -1211,7 +1211,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Cookbook/Cookbook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"Cookbook/Preview Content\"";
 				DEVELOPMENT_TEAM = 3Y4M3JUQDS;
 				ENABLE_PREVIEWS = YES;
@@ -1221,7 +1221,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.connapptivity.cookbook.cookbookapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -1239,6 +1239,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = CookbookWidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 3Y4M3JUQDS;
 				INFOPLIST_FILE = CookbookWidgets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1247,6 +1248,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.connapptivity.cookbook.cookbookapp.CookbookWidgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1264,6 +1266,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_ENTITLEMENTS = CookbookWidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 3Y4M3JUQDS;
 				INFOPLIST_FILE = CookbookWidgets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1272,6 +1275,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.connapptivity.cookbook.cookbookapp.CookbookWidgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

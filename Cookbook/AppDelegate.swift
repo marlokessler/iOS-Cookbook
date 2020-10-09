@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        #if DEBUG
         print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last)
+        #endif
         FirebaseApp.configure()
         AppVersioner.initialize()
         SettingsConnector.initialize()

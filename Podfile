@@ -1,28 +1,25 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
-
-target 'Cookbook' do
-  use_frameworks!
-  # Pods for Cookbook
+def shared_pods
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
   pod 'Firebase/Performance'
+end
 
+target 'Cookbook' do
+  platform :ios, '13.0'
+  use_frameworks!
+  # Pods for Cookbook
+  shared_pods
 end
 
 target 'CookbookWidgetsExtension' do
+  platform :ios, '13.0'
 	use_frameworks!
   # Pods for CookbookWidgetExtension
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Crashlytics'
-  pod 'Firebase/Performance'
+  shared_pods
 end
 
 target 'CookbookTests' do
   use_frameworks!
   # Pods for CookbookTests
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Crashlytics'
-  pod 'Firebase/Performance'
+  shared_pods
 end
-
