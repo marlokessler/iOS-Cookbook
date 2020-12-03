@@ -56,7 +56,7 @@ class RecipesOverviewController: UIViewController, Storyboarded {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let sectionInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-    private let itemsSpacing = ItemsSpacing(horizontal: 16, vertical: 16)
+    private let itemsSpacing  = ItemsSpacing(horizontal: 16, vertical: 16)
     
     private func configureCollectionView() {
         collectionView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
